@@ -14,11 +14,6 @@
   <dependencies>
 
     <dependency>
-      <groupId>org.apache.servicemix.bundles</groupId>
-      <artifactId>org.apache.servicemix.bundles.cglib</artifactId>
-    </dependency>
-
-    <dependency>
       <groupId>org.easymock</groupId>
       <artifactId>easymock</artifactId>
     </dependency>
@@ -40,18 +35,17 @@
     </dependency>
   </dependencies>
 
-
   <build>
     <plugins>
       <plugin>
-        <artifactId>maven-jar-plugin</artifactId>
-        <configuration>
-          <archive>
-            <manifestEntries>
-              <Automatic-Module-Name>org.jparsec</Automatic-Module-Name>
-            </manifestEntries>
-          </archive>
-        </configuration>
+          <artifactId>maven-jar-plugin</artifactId>
+          <configuration>
+            <archive>
+              <manifestEntries>
+                <Automatic-Module-Name>org.jparsec</Automatic-Module-Name>
+              </manifestEntries>
+            </archive>
+          </configuration>
       </plugin>
     </plugins>
   </build>

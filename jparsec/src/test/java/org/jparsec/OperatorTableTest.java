@@ -76,12 +76,16 @@ public class OperatorTableTest {
   }
   
   private static <T extends Comparable<T>> void assertOrder(T obj1, T obj2) {
-    assertTrue(obj1 + " should be before " + obj2, obj1.compareTo(obj2) < 0);
-    assertTrue(obj2 + " should be after " + obj1, obj2.compareTo(obj1) > 0);
+    assertTrue(obj1 + " should be before " + obj2, compare(obj1,obj2) < 0);
+    assertTrue(obj2 + " should be after " + obj1, compare(obj2,obj1) > 0);
   }
-  
+
   private static <T extends Comparable<T>> void assertSameOrder(T obj) {
-    assertEquals(obj + " should be equal to itself", 0, obj.compareTo(obj));
+    assertEquals(obj + " should be equal to itself", 0, compare(obj, obj));
+  }
+
+  private static <T extends Comparable<T>> int compare(T obj1, T obj2) {
+    return obj1.compareTo(obj2);
   }
   
   private static OperatorTable.Operator operator(int precedence, OperatorTable.Associativity associativity) {
