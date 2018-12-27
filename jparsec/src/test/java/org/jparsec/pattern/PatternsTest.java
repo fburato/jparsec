@@ -15,7 +15,7 @@
  *****************************************************************************/
 package org.jparsec.pattern;
 
-import org.fest.assertions.Assertions;
+import static org.assertj.core.api.Assertions.*;
 import org.junit.Test;
 
 import static org.jparsec.pattern.Pattern.MISMATCH;
@@ -217,7 +217,7 @@ public class PatternsTest {
 
   @Test
   public void testRepeatAnyIsNotEquivalentToHasExact() {
-    Assertions.assertThat(Patterns.repeat(2, CharPredicates.ALWAYS).match("abc", 0, 3)) //
+    assertThat(Patterns.repeat(2, CharPredicates.ALWAYS).match("abc", 0, 3)) //
     .isNotEqualTo(Patterns.hasExact(2).match("abc", 0, 3));
   }
 
